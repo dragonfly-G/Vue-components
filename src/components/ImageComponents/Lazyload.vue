@@ -60,7 +60,7 @@
 			}
 		},
 		mounted () {
-	      	
+	      	console.log(this.$route.query.name,66666666)
 	    },
 		methods:{
 		  	routerGo(){

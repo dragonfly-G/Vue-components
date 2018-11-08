@@ -10,7 +10,7 @@
 			<router-link 
 		        tag='li'
 		        v-for='(item,index) in headList'
-		        :to="item.path" 
+		        :to="item.path"
 		        :key='item.id'
 		    >
 		       {{item.name}}
@@ -61,6 +61,15 @@ export default {
 	      	},
 	      	{//11
 	      	  id:'012',name:'图片懒加载vue-lazyload',path:'/Lazyload'
+	      	},
+	      	{//12
+	      	  id:'013',name:'柱状图点击事件',path:'/Bargraph'
+	      	},
+	      	{//13
+	      	  id:'014',name:'demo',path:'/Case'
+	      	},
+	      	{//14
+	      	  id:'015',name:'文本溢出弹出层',path:'/Casedemo'
 	      	}
 	    ],
 	    headList:'',
@@ -79,7 +88,13 @@ export default {
   	} else if (this.$route.params.id == '005') {
   		this.headList = this.homelist.slice(9,11)
   	} else if (this.$route.params.id == '006') {
-  		this.headList = this.homelist.slice(11)
+  		this.headList = this.homelist.slice(11,12)
+  	} else if (this.$route.params.id == '007') {
+  		this.headList = this.homelist.slice(12,13)
+  	} else if (this.$route.params.id == '008') {
+  		this.headList = this.homelist.slice(13,14)
+  	} else if (this.$route.params.id == '009') {
+  		this.headList = this.homelist.slice(14)
   	}
   },
 }
