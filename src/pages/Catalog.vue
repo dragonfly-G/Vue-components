@@ -7,7 +7,7 @@
 		  	<span class="header_title">{{this.$route.params.name}}</span>
 	  	</div>
 		<ul>
-			<router-link 
+			<router-link
 		        tag='li'
 		        v-for='(item,index) in headList'
 		        :to="item.path"
@@ -70,6 +70,9 @@ export default {
 	      	},
 	      	{//14
 	      	  id:'015',name:'文本溢出弹出层',path:'/Casedemo'
+	      	},
+	      	{//15
+	      	  id:'016',name:'置顶',path:'/RoofPlacement'
 	      	}
 	    ],
 	    headList:'',
@@ -77,24 +80,26 @@ export default {
   	}
   },
   mounted(){
-  			if(this.$route.params.id == '001'){
+  			if(this.$route.params.id === '001'){
   		this.headList = this.homelist.slice(0,5)
-  	} else if (this.$route.params.id == '002') {
+  	} else if (this.$route.params.id === '002') {
   		this.headList = this.homelist.slice(5,6)
-  	} else if (this.$route.params.id == '003') {
+  	} else if (this.$route.params.id === '003') {
   		this.headList = this.homelist.slice(6,8)
-  	} else if (this.$route.params.id == '004') {
+  	} else if (this.$route.params.id === '004') {
   		this.headList = this.homelist.slice(8,9)
-  	} else if (this.$route.params.id == '005') {
+  	} else if (this.$route.params.id === '005') {
   		this.headList = this.homelist.slice(9,11)
-  	} else if (this.$route.params.id == '006') {
+  	} else if (this.$route.params.id === '006') {
   		this.headList = this.homelist.slice(11,12)
-  	} else if (this.$route.params.id == '007') {
+  	} else if (this.$route.params.id === '007') {
   		this.headList = this.homelist.slice(12,13)
-  	} else if (this.$route.params.id == '008') {
+  	} else if (this.$route.params.id === '008') {
   		this.headList = this.homelist.slice(13,14)
-  	} else if (this.$route.params.id == '009') {
-  		this.headList = this.homelist.slice(14)
+  	} else if (this.$route.params.id === '009') {
+  		this.headList = this.homelist.slice(14,15)
+  	} else if (this.$route.params.id === '010') {
+  		this.headList = this.homelist.slice(15)
   	}
   },
 }

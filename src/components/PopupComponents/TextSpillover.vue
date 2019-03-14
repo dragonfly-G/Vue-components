@@ -1,10 +1,10 @@
 <template>
-	<div>
+	<div @click="waiceng">
 		<div class="header">
 			<span class="iconfont" @click="routerGo">&#xe667;</span>
 		  	<span class="header_title">溢出弹出层</span>
 		</div>
-		<div class="kuang" ref='xiaokuang'>4{{propdata}}</div>
+		<div class="kuang" ref='xiaokuang'>{{propdata}}</div>
 		<slot></slot>
 	</div>
 </template>
@@ -24,9 +24,6 @@
 			PopupDom:{
 
 			},
-			showPopup:{
-				type:Boolean
-			}
 		},
 		data(){
 			return{
@@ -36,23 +33,30 @@
 			}
 		},
 		updated(){
-			console.log(this.top,3333333)
 			if (this.PopupDom > this.$refs.xiaokuang.offsetWidth) {
-				console.log(666666)
 				this.$refs.xiaokuang.style.top = -500 + 'px'
 			}else {
 				this.$refs.xiaokuang.style.top = this.top - 35 + 'px'
 				this.$refs.xiaokuang.style.left = this.left + 10 + 'px'
-				console.log(777777)
+				if (this.left + 10 + this.$refs.xiaokuang.offsetWidth >= document.body.clientWidth) {
+					
+				}
+				if (this.timeoutflag != null) {
+			        clearTimeout(this.timeoutflag)
+			    }
+				this.timeoutflag = setTimeout(function () {
+					console.log('时间延迟')
+					document.querySelector('.kuang').style.top = -500 + 'px'
+				}, 1000)
 			}
-			console.log(this.PopupDom,'我是弹出框')
 		},
 		methods:{
 			routerGo(){
 		  		this.$router.go(-1)
 		  	},
-		},
-		components:{
+		  	waiceng(){
+		  		this.$refs.xiaokuang.style.top = -500 + 'px'
+		  	}
 		}
 	}
 </script>

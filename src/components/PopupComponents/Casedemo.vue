@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<TextSpillover :propdata='propdata' :top='top' :left='left' :PopupDom='PopupDom' :showPopup='showPopup'>
+		<TextSpillover :propdata='propdata' :top='top' :left='left' :PopupDom='PopupDom'>
 			<div class="namelist" v-for='(item,index) in nameData' :key='index'>
 				<span>{{item.productId}}</span>
 				<span 
@@ -25,15 +25,16 @@
 				propdata:'',
 				top:'',
 				left:'',
-				PopupDom:'',
-				showPopup:false
+				PopupDom:''
 			}
 		},
 		created(){
 			this.$store.dispatch('getName')
 		},
 		mounted(){
-			this.nameData = this.$store.state.nameData
+			setTimeout(() => {
+				this.nameData = this.$store.state.nameData
+			},11)
 		},
 		methods:{
 		  	routerGo(){
@@ -46,11 +47,10 @@
 			  		this.propdata = val
 			  		this.top = event.clientY
 			  		this.left = event.clientX
-			  		this.PopupDom = this.$refs.PopupDocument[index].offsetWidth
-			  		this.showPopup = true
-			  		console.log(this.PopupDom,"我是数据")
+			  		this.PopupDom = this.$refs.PopupDocument[index].offsetWidth	  		
 		  		}
-		  	}
+		  	},
+		  	
 		},
 		components:{
 			TextSpillover
@@ -78,6 +78,9 @@
 	span:nth-child(4){
 		flex-basis:20%;
 		text-align: center; 
+		overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
 	}
 }
 </style>

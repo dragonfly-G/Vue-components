@@ -6,6 +6,9 @@ import router from './router'
 import Vuex from 'vuex'
 import axios from 'axios'
 import store from './store/store'
+// 微信分享
+import WXConfig from './assets/js/wx.jsapi' 
+Vue.prototype.WXConfig = WXConfig;
 
 import './assets/iconfont.css'
 

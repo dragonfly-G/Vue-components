@@ -27,23 +27,57 @@ import Bargraph from "@/components/EcahrtComponents/Bargraph"
 import Case from "@/components/demo/Case"
 //文本溢出弹出层
 import Casedemo from '@/components/PopupComponents/Casedemo'
+// 置顶
+import RoofPlacement from '@/components/RoofPlacement/RoofPlacement'
 
 Vue.use(Router)
 
 const router = new Router({
   routes: [
     // 首页
-    { path: '/', name: 'OverHome', component: OverHome },
+    {
+      path: '/',
+      name: 'OverHome',
+      component: () => import('@/pages/OverHome')
+    },
     //目录列表
-    { path: '/Catalog/:id/:name', name: 'Catalog', component: Catalog },
+    {
+      path: '/Catalog/:id/:name',
+      name: 'Catalog',
+      component: Catalog
+    },
     //头部样式效果
-    { path: '/HeaderTop', name: 'HeaderTop', component: HeaderTop },
-    { path: '/Header', name: 'Header', component: Header },
-    { path: '/HeaderSlider', name: 'HeaderSlider', component: HeaderSlider },
-    { path: '/HeaderDraw', name: 'HeaderDraw', component: HeaderDraw },
-    { path: '/ScrollBar', name: 'ScrollBar', component: ScrollBar },
+    {
+      path: '/HeaderTop',
+      name: 'HeaderTop',
+      component: HeaderTop
+    },
+    {
+      path: '/Header',
+      name: 'Header',
+      component: Header
+    },
+    {
+      path: '/HeaderSlider',
+      name: 'HeaderSlider',
+      component: HeaderSlider
+    },
+    {
+      path: '/HeaderDraw',
+      name: 'HeaderDraw',
+      component: HeaderDraw
+    },
+    {
+      path: '/ScrollBar',
+      name: 'ScrollBar',
+      component: ScrollBar
+    },
     //底部样式效果
-    { path: '/FootFlex', name: 'FootFlex', component: FootFlex },
+    {
+      path: '/FootFlex',
+      name: 'FootFlex',
+      component: FootFlex
+    },
     //banner样式效果
     { path: '/Banner', name: 'Banner', component: Banner },
     { path: '/Gallery', name: 'Gallery', component: Gallery },
@@ -59,6 +93,8 @@ const router = new Router({
     { path: '/Case', name: 'Case', component: Case },
     //文本溢出弹出层
     { path: '/Casedemo', name: 'Casedemo', component: Casedemo },
+    //置顶
+    { path: '/RoofPlacement', name: 'RoofPlacement', component: RoofPlacement },
   ],
 
   scrollBehavior (to, from, savedPosition) {
