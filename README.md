@@ -27,4 +27,9 @@ npm run e2e
 npm test
 ```
 
+## 页面效果
+![image](https://github.com/dragonfly-G/Used_car/blob/master/static/show/filter.png)
+![image](https://github.com/dragonfly-G/Used_car/blob/master/static/show/scrollTop.png)
+![image](https://github.com/dragonfly-G/Used_car/blob/master/static/show/scrollBottom.png)
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
